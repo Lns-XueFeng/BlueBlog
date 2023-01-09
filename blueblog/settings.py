@@ -2,13 +2,14 @@ import os
 import sys
 
 
-base_dir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
-WIN = sys.platform.endswith("win")
+# SQLite URI compatible
+WIN = sys.platform.startswith('win')
 if WIN:
-    prefix = "sqlite:///"
+    prefix = 'sqlite:///'
 else:
-    prefix = "sqlite:////"
+    prefix = 'sqlite:////'
 
 
 class BaseConfig(object):
@@ -28,12 +29,12 @@ class BaseConfig(object):
     BLUELOG_THEMES = {"perfect_blue": "Perfect Blue", "black_swan": "Black Swan"}
     BLUELOG_SLOW_QUERY_THRESHOLD = 1
 
-    BLUELOG_UPLOAD_PATH = os.path.join(base_dir, "uploads")
+    BLUELOG_UPLOAD_PATH = os.path.join(basedir, "uploads")
     BLUELOG_ALLOWED_IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "gif"]
 
 
 class DevelopmentConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI = prefix + os.path.join(base_dir, 'data-dev.db')
+    SQLALCHEMY_DATABASE_URI = prefix + os.path.join(basedir, 'data-dev.db')
 
 
 class TestingConfig(BaseConfig):
@@ -43,7 +44,7 @@ class TestingConfig(BaseConfig):
 
 
 class ProductionConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', prefix + os.path.join(base_dir, 'data.db'))
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', prefix + os.path.join(basedir, 'data.db'))
 
 
 config = {

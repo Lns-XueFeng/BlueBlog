@@ -1,2 +1,2 @@
 FLASK_APP=blueblog
-FLASK_ENV=development
+FLASK_DEBUG=True
