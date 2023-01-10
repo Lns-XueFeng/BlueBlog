@@ -2,14 +2,13 @@ import os
 import click
 
 from flask import Flask
-from flask import render_template, request
+from flask import render_template
 from flask_wtf.csrf import CSRFError
-from flask_sqlalchemy import get_debug_queries
 
 from .blueprints.blog import blog_bp
 from .blueprints.admin import admin_bp
 from .blueprints.auth import auth_bp
-from .extensions import db, csrf, ckeditor, bootstrap, debug_toolbar, moment, login_manager, migrate
+from .extensions import db, csrf, ckeditor, bootstrap4, debug_toolbar, moment, login_manager, migrate
 from .models import Admin, Category, Post, Link
 from .settings import config
 
@@ -31,7 +30,7 @@ def create_app(config_name=None):
     db.init_app(app)
     csrf.init_app(app)
     ckeditor.init_app(app)
-    bootstrap.init_app(app)
+    bootstrap4.init_app(app)
     debug_toolbar.init_app(app)
     moment.init_app(app)
     login_manager.init_app(app)

@@ -45,7 +45,6 @@ class Post(db.Model):
     can_comment = db.Column(db.Boolean, default=True)
 
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
-
     category = db.relationship('Category', back_populates='posts')
 
 
