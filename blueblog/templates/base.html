@@ -1,4 +1,4 @@
-{% from 'bootstrap/nav.html' import render_nav_item %}
+{% from 'bootstrap4/nav.html' import render_nav_item %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,12 +54,12 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url_for('admin.manage_post') }}">Post</a>
                                 <a class="dropdown-item" href="{{ url_for('admin.manage_category') }}">Category</a>
-                                <a class="dropdown-item" href="{{ url_for('admin.manage_comment') }}">
-                                    Comment
-                                    {% if unread_comments %}
-                                        <span class="badge badge-success">{{ unread_comments }}</span>
-                                    {% endif %}
-                                </a>
+{#                                <a class="dropdown-item" href="{{ url_for('admin.manage_comment') }}">#}
+{#                                    Comment#}
+{#                                    {% if unread_comments %}#}
+{#                                        <span class="badge badge-success">{{ unread_comments }}</span>#}
+{#                                    {% endif %}#}
+{#                                </a>#}
                                 <a class="dropdown-item" href="{{ url_for('admin.manage_link') }}">Link</a>
                             </div>
                         </li>
@@ -82,9 +82,9 @@
     {% block footer %}
         <footer>
             <p class="float-left">
-                <small> &copy; 2018 <a href="http://greyli.com" title="Written by Grey Li">Grey Li</a> -
-                    <a href="https://github.com/greyli/bluelog" title="Fork me on GitHub">GitHub</a> -
-                    <a href="http://helloflask.com" title="A HelloFlask project">HelloFlask</a>
+                <small> &copy; 2022 <a href="http://codechangeworld.cn" title="Written by XueFeng">XueFeng</a> -
+                    <a href="https://github.com/Lns-XueFeng/BlueBlog" title="Fork me on GitHub">GitHub</a> -
+                    <a href="https://mp.weixin.qq.com/mp/homepage?__biz=Mzg5ODYxMTg0NA==&hid=1&sn=a17f28de8b7df5f0a72a6337d785913b&scene=18" title="My WeChat">WeChat</a>
                 </small>
             </p>
             <p class="float-right">
