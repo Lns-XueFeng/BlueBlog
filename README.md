@@ -1,4 +1,6 @@
-## BlueBlog learn from greyli
+## BlueBlog
+
+Flask Web开发实战，第二个实战项目BlueBlog，学习与模仿greyli是如何组织项目以及在实战中编写代码的。
 
 #### 具体实现功能：
 
